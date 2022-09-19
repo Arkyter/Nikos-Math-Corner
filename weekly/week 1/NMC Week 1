@@ -1,0 +1,123 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#1}
+\date{Aug. 14, 2022} 
+\maketitle
+
+\section*{Welcome!}
+    This is a selection of classic beginner level Olympiad problems, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try problems that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+    
+    Have fun!
+    
+\section{Algebra}
+
+\textit{
+    \begin{flushright}This is the field you're probably the most familiar with. It talks about\\
+    \textbf{equations}, \textbf{inequalities}, \textbf{real} (and sometimes complex!) \textbf{numbers}, \textbf{polynomials}...\\
+    despite your experience, these problems will require you to think\\
+    in new ways not taught in class.\\
+    Have fun and think creatively!\end{flushright}
+}
+
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item Calculate the exact value of the following number \textit{without a calculator}.
+    \[ \left(1 - \frac{1}{2}\right) + \left(\frac{1}{2} - \frac{1}{3}\right) + \left(\frac{1}{3} - \frac{1}{4}\right) + \cdots + \left(\frac{1}{99\,999} - \frac{1}{100\,000}\right). \]
+    \textit{Tip -} please don't try to calculate this directly, it's going to take you literal years. Look for a shortcut!
+    
+    \item It is known that every linear function $f(x) = ax+b$ with $a\neq 0$ intersects the $x$-axis at point $x=-b/a$, but not all polynomials have such a property! For example, the function $g(x) = x^2+1$ never intersects the $x$-axis. We classify polynomials by degree - a polynomial has degree $n$ if $x^n$ is the term with the biggest exponent in its expansion.
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item For every even number $n$, find a polynomial of degree $n$ that doesn't intersect the $x$-axis.
+        \item (\fullchili) Prove that any odd-degree polynomial intersects the $x$-axis at some point.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\textit{\begin{flushright}
+Combinatorics is a branch of mathematics that primarily deals with\\
+\textbf{counting} things in efficient ways, but here we also include \textbf{games}\\
+and other creative problems that don't fit in the other categories.\\
+Enjoy this playful chapter!
+\end{flushright}}
+
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item Frog and Arky are playing a game with a fair coin! First, Frog tosses the coin. If it lands on heads, Frog wins the game. If it lands on tails, Frog hands the coin to Arky, who then tosses the coin. The first person to get a heads wins the game. If someone gets a tails on their toss, the coin is given to their opponent. What's the probability that Arky wins? 
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item After getting tired of flipping coins back and forth, Frog and Arky decide to play the same game with a die! The winner is the first person to roll a $6$, and if the die comes up as anything else, it is passed to the other person. What's the probability that Arky wins in this case?
+        
+        \item (\fullchili) Let's consider a more generalized version of this problem. If a group of $n$ people, $P_1, P_2, P_3, \dots, P_n$ are playing the coin game, where if $P_1$ doesn't flip a heads, the coin is passed onto $P_2$, then $P_3$, and so on, what's the chance that the $n$th player, $P_n$, wins the game? What if this is done with the dice game?
+    \end{enumerate}
+    
+    \item (\fullchili) Niko is trying to separate their $n$ \emph{A-okay} (denoted by an $A$) lightbulbs from the $n$ \emph{broken} (denoted by a $B$) ones. Niko has jumbled them all up in an arbitrary sequence of $2n$ lightbulbs and goes through the following procedure: they look at the $n$\textsuperscript{th} lightbulb from the left and picks up the largest group of adjacent lightbulbs of the same state (either A-okay or broken) that contains that $n$\textsuperscript{th} lightbulb. For example, if $n=4$, the process starting from the sequence $AABBBABA$ would be
+    
+    \begin{align*}
+      &AA\underline{B\boldsymbol{B}B}ABA 
+      \to BBB\underline{\boldsymbol{A}AA}BA 
+      \to AAA\underline{\boldsymbol{B}BBB}A \\
+      \to\ &\underline{BBB\boldsymbol{B}}AAAA 
+      \to \underline{BBB\boldsymbol{B}}AAAA 
+      \to \cdots.
+    \end{align*}
+
+    Prove that Niko will always be able to have the $n$ leftmost lightbulbs of the same type after some number of these operations.
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\textit{\begin{flushright}
+Geometry, studied since ancient Greece, is the oldest discipline of mathematics. It concerns \textbf{space}, \textbf{distances}, \textbf{areas}, \textbf{volumes}.\\ Learn the pretty intricacies of the figures below!
+\end{flushright}}
+
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item Below is a triangle $ABC$ whose area is $60$. $M$ and $N$ cut segments $BC$ and $AC$ in half respectively, what's the value of the blue area $[ABM]$? What about the orange $[CMN]$ or green one $[MGN]$?
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=5cm]{Diagrams/G1.tex}
+        \label{fig:NMC1_G1}
+    \end{figure}
+    
+    \item Take the figure from \textbf{G1}, suppose that $P$ is a point inside quadrilateral $ABMN$, show that the area of the quadrilateral $PMCN$ is always at least $15$ and at most $30$.
+    
+    \item \begin{enumerate}[label=(\alph*)]
+        \item Let $ABCD$ be a quadrilateral. Show that if two opposite angles of $ABCD$ are both right angles, then there is a circle that passes through the vertices of the quadrilateral.
+        \item Let $ABCD$ be a quadrilateral. Show that if two opposite angles of $ABCD$ are supplementary (that means they sum to $180^\circ$), then there is a circle that passes through the vertices of the quadrilateral.
+    \end{enumerate}
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=10cm]{Diagrams/G2.tex}
+        \label{fig:NMC1_G2}
+    \end{figure}
+    
+    %\item In a triangle $ABC$, we let the lengths of sides $BC, CA, AB$ be denoted by $a, b, c$ respectively (so the letter refers to the side across it), and the angles at $A, B, C$ be denoted by $\alpha, \beta, \gamma$ respectively.
+    %\begin{enumerate}[label=(\alph*)]
+    %    \item Suppose $\alpha = 90^\circ$. Prove that the hypotenuse $BC$ is the greatest side, so $a > b$ and $a > c$.
+    %    \item Suppose $\alpha > 90^\circ$. Prove that $BC$ is the greatest side.
+    %    \item Suppose $\alpha > \beta > \gamma$. Does it always hold that $a > b > c$? What about the converse (if $a > b > c$ then $\alpha > \beta > \gamma$)?
+    %\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\textit{\begin{flushright}
+Number theory is the part of mathematics that deals with the\\ \textbf{integers} (numbers w/ no decimal dot), \textbf{factorization}, \textbf{divisibility}, \textbf{primes}, ...\\ While its objects are simple, don't be deceived,\\ solutions still require a good bit of cleverness!
+\end{flushright}}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item Calculate the units digit of $2^{2022}$ \textit{without a calculator}. Then, find the units digit of 
+    \[ 2^{2^{2022}}. \]
+    Next, find the remainder of $3^{2006}$ when divided by $5$. What about $3^{2006}/8$?\\
+    \textit{Tip -} please don't try to calculate this directly, it's going to take you literal years. Look for a shortcut!
+    
+    \item Consider a number like $42$. It is divisible by the two consecutive integers $2$ and $3$, but also by their product $2\times 3 = 6$. If we know that an integer is divisible by $2$ and $3$, do we always have that it is divisible by $6$? Why? More generally, if we know that an integer is divisible by two consecutive integers $n$ and $n+1$, do we always have that it divisible by $n(n+1)$?
+\end{enumerate}
+
+\end{document}
