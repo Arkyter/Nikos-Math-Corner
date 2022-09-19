@@ -1,0 +1,75 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#4}
+\date{Sep. 11, 2022} 
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{A Not-so-long Chain of Trigonometric Functions} \newline
+    Does there exist a real number $x$ that satisfies
+    \[ \sin(\sin(\sin(\sin(x)))) = \cos(\cos(\cos(\cos(x))))? \]
+
+    \item (\fullchili) \textbf{A Long Chain of Polynomials} \newline
+    Suppose we have a polynomial $P$ with real coefficients, excluding $P(x) = x$. Define
+    \[ P^n(x) = \underbrace{P(P(P(\dots P}_{n \text{ times}}(x)))) \]
+    Prove that $P(x) - x$ divides into $P^n(x) - x$ for all positive integers $n$.
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Pancake Stacking} \newline
+    Niko is stacking pancakes on plates! They have a total of $n$ pancakes and $k > 1$ plates. In the beginning, Niko has one giant plate containing pancakes of all sizes, arranged with the largest ones at the bottom and the smallest ones at the top. In order to properly distribute pancakes to everyone, there must be pancakes on every plate! Here are the rules for shifting pancakes from one plate to another:
+    \begin{itemize}
+        \item Only one pancake may be moved at a time, to prevent any damage to the integrity of the fluffiness required.
+        \item Niko is only allowed to move the topmost pancake of the stack on any plate to another plate. 
+        \item In order to prevent floppage, Niko is not allowed to put a bigger pancake on top of a smaller pancake.
+        \item Niko must move the pancakes carefully.
+    \end{itemize}
+    \begin{enumerate}
+        \item To start off, we have $k = 3$ plates and $n = 4$ pancakes. Niko wants to move all $4$ pancakes from one plate to another! To stop people from going hungry, what's the least amount of pancake movements needed to complete the task? \footnote{meanwhile niko spends a good amount of time trying to optimize pancake moving and the pancakes get cold :( how sad}
+        \item (\halfchili) Now, Niko wishes to distribute the pancake such that there is at least one pancake for each plate (and thus, $n \geq k$). How many possible ways are there to distribute said pancakes to each plate? Note that simply shuffling the plates around does not constitute a different pancake distribution!
+        \item (\halfchili) Arky catches Niko breaking the pancake shifting rules as outlined above! He now wants to find out all the \textit{illegal} (unachievable) pancake distributions to make sure that Niko is not serving illegally shuffled pancakes. Assuming has been Niko handling each pancake with care, how many \textit{illegal} pancake distributions are there?
+    \end{enumerate}
+    
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item \textbf{Lance's Number} \newline
+    Looking at last week's problem set, Lance decides to join the party and creates his own \textit{Lance Numbers}, $L$. For $L$ to be a \textit{Lance Number}, there exists a set of $L$ points, $S$, such that any three points lie on the circumference of a unit circle, but all the $L$ points of $S$ do not lie on a single unit circle. What are all the Lance numbers?
+    
+    \item (\fullchili) \textbf{Trisecting a Triangle} \newline
+    Suppose we have a triangle $\Delta ABC$. Prove that the angle trisectors of $A, B, C$ intersect at $3$ separate points to form an equilateral triangle.
+    \newline\newline
+    \begin{center}
+        \includegraphics[width = 10cm]{Diagrams/W4G1.tex}
+    \end{center}
+    
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Choosing Wisely} \newline
+    $50$ different numbers are selected from $\{1, 2, 3, \dots, 100\}$. Show that $2$ numbers can always be chosen from the previous selection such that their sum is a perfect square.
+    
+    \item (\halfchili) \textbf{Polygonal Problems} \newline
+    Suppose we have a regular polygon in the Cartesian coordinates plane such that all of its vertices have integer coordinates. Does this polygon have to be a square? Can it be a different polygon?
+\end{enumerate}
+
+\end{document}
