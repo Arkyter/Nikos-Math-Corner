@@ -1,0 +1,147 @@
+\documentclass[tikz]{standalone}
+\usetikzlibrary{decorations.markings}
+\usepackage{tkz-euclide}
+\usepackage{xcolor}
+
+\begin{document}
+
+\pgfmathsetseed{35}
+
+\definecolor{blauw}{HTML}{82D0F5}
+
+% A,B,C,D,E,P,H,P' gets translated to
+% B,C,A,M,N,P,H,P' because notation :(
+\newcommand\translator[1]{%
+\pgfmathtruncatemacro\i{#1-1}
+\pgfmathparse{{"B","C","A","M","N","P","H","P'"}[\i]}
+\pgfmathresult%
+}
+
+\begin{tikzpicture}
+
+  \coordinate (A) at (rand,rand);
+  \coordinate (B) at (4+rand,1+rand);
+  \coordinate (C) at (1+rand,4+rand);
+  \tkzDefMidPoint(A,B) \tkzGetPoint{D}
+  \tkzDefMidPoint(B,C) \tkzGetPoint{E}
+  \coordinate (P) at (1+rand^2,2+rand);
+
+  \draw (A) -- (B) -- (C) -- cycle;
+  \draw[fill=blauw] (P) -- (D) -- (B) -- (E) -- cycle;
+
+  \def\markSize{0.08}
+
+  \tkzMarkSegments[mark=||,size=\markSize cm](A,D B,D)
+  \tkzMarkSegments[mark=|||,size=\markSize cm](B,E C,E)
+
+  \foreach \point [count = \n, evaluate = \n as \rot using
+  {{-135,0,135,-45,45,180}[\n - 1]}] in {A,B,C,D,E,P}{
+    %\fill (\point) circle (2pt);
+    \node[label={[label distance=-4pt]\rot:$\translator{\n}$}] at (\point) {};
+  }
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+  \coordinate (A) at (rand,rand);
+  \coordinate (B) at (4+rand,1+2*rand);
+  \coordinate (C) at (1+rand,4+rand);
+  \tkzDefMidPoint(A,B) \tkzGetPoint{D}
+  \tkzDefMidPoint(B,C) \tkzGetPoint{E}
+  \coordinate (P) at (3+rand^2,2+rand);
+
+  \draw (A) -- (B) -- (C) -- cycle;
+  \draw[fill=blauw] (P) -- (D) -- (B) -- (E) -- cycle;
+
+  \draw (B) -- (D) -- (E) -- cycle;
+
+  \def\markSize{0.08}
+
+  \tkzMarkSegments[mark=||,size=\markSize cm](A,D B,D)
+  \tkzMarkSegments[mark=|||,size=\markSize cm](B,E C,E)
+
+  \foreach \point [count = \n, evaluate = \n as \rot using
+  {{-135,0,135,-45,45,0}[\n - 1]}] in {A,B,C,D,E,P}{
+    %\fill (\point) circle (2pt);
+    \node[label={[label distance=-4pt]\rot:$\translator{\n}$}] at (\point) {};
+  }
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+  \coordinate (A) at (rand,rand);
+  \coordinate (B) at (4+rand,1+2*rand);
+  \coordinate (C) at (1+rand,4+rand);
+  \tkzDefMidPoint(A,B) \tkzGetPoint{D}
+  \tkzDefMidPoint(B,C) \tkzGetPoint{E}
+  \coordinate (P) at (C);
+
+  \draw (A) -- (B) -- (C) -- cycle;
+  \draw[fill=blauw] (P) -- (D) -- (B) -- (E) -- cycle;
+
+  \draw (B) -- (D) -- (E) -- cycle;
+
+  \def\markSize{0.08}
+
+  \tkzMarkSegments[mark=||,size=\markSize cm](A,D B,D)
+  \tkzMarkSegments[mark=|||,size=\markSize cm](B,E C,E)
+
+  \begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+    \draw[postaction={decorate}] (D) -- (E);
+    \draw[postaction={decorate}] (A) -- (C);
+  \end{scope}
+
+  \foreach \point [count = \n, evaluate = \n as \rot using
+  {{-135,0,135,-45,45,45}[\n - 1]}] in {A,B,C,D,E,P}{
+    %\fill (\point) circle (2pt);
+    \node[label={[label distance=-4pt]\rot:$\translator{\n}$}] at (\point) {};
+  }
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+  \coordinate (A) at (rand,rand);
+  \coordinate (B) at (4+rand,1+2*rand);
+  \coordinate (C) at (1+rand,4+rand);
+  \tkzDefMidPoint(A,B) \tkzGetPoint{D}
+  \tkzDefMidPoint(B,C) \tkzGetPoint{E}
+  \coordinate (P) at (1+rand^2,2+rand/2);
+  \tkzDefPointBy[projection= onto E--D](P) \tkzGetPoint{H}
+  \tkzDefPointBy[projection= onto A--C](P) \tkzGetPoint{P'}
+
+  \draw (A) -- (B) -- (C) -- cycle;
+  \draw[fill=blauw!35!white] (P') -- (D) -- (B) -- (E) -- cycle;
+  \draw[fill=blauw] (P) -- (D) -- (B) -- (E) -- cycle;
+  \draw (B) -- (D) -- (E) -- cycle;
+  \draw (P) -- (H);
+  \draw[densely dotted] (P) -- (P');
+
+  \def\markSize{0.08}
+
+  \tkzMarkSegments[mark=||,size=\markSize cm](A,D B,D)
+  \tkzMarkSegments[mark=|||,size=\markSize cm](B,E C,E)
+  \tkzMarkRightAngle(P,H,E)
+
+  \begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+    \draw[postaction={decorate}] (D) -- (E);
+    \draw[postaction={decorate}] (A) -- (C);
+  \end{scope}
+
+  \foreach \point [count = \n, evaluate = \n as \rot using
+  {{-135,0,135,-45,45,-135,0,-180}[\n - 1]}] in {A,B,C,D,E,P,H,P'}{
+    %\fill (\point) circle (2pt);
+    \node[label={[label distance=-4pt]\rot:$\translator{\n}$}] at (\point) {};
+  }
+
+\end{tikzpicture}
+
+\end{document}
