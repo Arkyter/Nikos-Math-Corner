@@ -1,0 +1,95 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#3}
+\date{Sep. 4, 2022} 
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{Gacha Gamblers} \newline
+    A new popular gacha game has been released, and everyone wants to pull a $5$-star unit! However, the chances of doing so are $1$ in $100$.
+    \begin{enumerate}
+        \item Suppose Arky decides to spend his monthly allowance on this game. He pulls $100$ times! How many $5$-star units can Arky expect to get?
+        \item What's the chance that Arky does not get a single $5$-star unit?
+        \item (\fullchili) Let $P(n)$ be the probability that Arky receives $n$ $5$-star units. Show that
+        \[ \sum_{n = 0}^{100}nP(n) = 1. \]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{A Bouncing "DVD"...} \newline
+    A crowd of people have gathered in front of a large TV screen, where a DVD logo is bouncing around! The DVD logo starts at the top-left corner of the screen and moves in a diagonal fashion (for every pixel it moves in the $x$ direction it moves one pixel in the $y$ direction). When one of its sides hits a wall, it bounces off in a reflective manner.
+    \begin{enumerate}
+        \item Frog observes that the DVD logo has just reset itself and is starting in the upper left corner. If the dimensions of the logo are $2$ by $3$ feet and the screen is $5$ by $8$ feet, how many bounces will it take for the logo to hit a corner?
+        
+        \item Arky has crept behind the TV and decides to be evil. He wants to make it so the "DVD" never hits a corner by changing the angle of its initial trajectory! Is this possible?
+        
+        \item (\fullchili \fullchili) After seeing Arky tampering with the TV, the crowd is fed up. They declare that they are now only waiting for a "close enough" corner bounce. If the logo hits an edge within an inch of a corner, the crowd is satisfied. Is it possible for Arky to prevent this permanently, given any TV and any DVD logo?
+    \end{enumerate}
+    \vspace{30pt}
+    \begin{center}
+        \includegraphics[width = 10cm]{Diagrams/W3C1.tex}
+    \end{center}
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item (\fullchili) \textbf{A Scattered Collection of Points} \newline
+    Suppose we have a collection of points $S$. Lance notices that any selection of $3$ points can be contained in a unit circle (of radius $1$)! Show that all the points in $S$ can also be contained in the unit circle.
+    
+    \item \textbf{Twig Snapping} \newline
+    Suppose we have a wooden stick that is $1$ unit long. We pick two points on the stick and we proceed to snap it into $3$ pieces at those two points.
+    \begin{enumerate}
+        \item (\starproblem) What's the chance that we can form a triangle with the three resulting pieces?
+        
+        \item (\fullchili) What's the average area of the triangle, if such a triangle can be constructed? 
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Special Numbers} \newline
+    The OneShot Math Group is hunting for nice and funky numbers. \sout{Gotta catch them all!}
+    \begin{enumerate}
+        \item MPK has found a \textit{dragon number}, D. A positive integer is called a \textit{dragon number} if:
+        \begin{itemize}
+            \item it is divisible by 2022;
+            \item it only contains the digits 0 and 7.
+        \end{itemize}
+        Suppose $D$ contains exactly $n$ times the digit $7$ in its decimal expansion. What are all the possible values of $n$?
+        
+        \item (\halfchili) Arky claimed to have also found an \textit{arky number}, $A$. A positive integer is called an \textit{arky number} if:
+        \begin{itemize}
+            \item it is a 7 digit number;
+            \item it starts with 7;
+            \item adjacent digits are at most 1 from each other;
+            \item it is divisible by 11.
+        \end{itemize}
+        Lance thinks about this for a while, then realizes that Arky is wrong. Can you prove that no such \textit{arky number} exists?
+        
+        \item (\fullchili \fullchili) A while later, frog imagines a series of \textit{hopping numbers} $H$, with the following properties:
+        \begin{itemize}
+            \item it is a positive integer with $n$ digits;
+            \item if you take the decimal expansion of $1/H$, find the first non-$0$ digit $d$, and then consider the sequence of $n$ consecutive digits starting at $d$, the resulting sequence is the decimal expansion of $H$ itself.
+        \end{itemize}
+        Determine all hopping numbers.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
