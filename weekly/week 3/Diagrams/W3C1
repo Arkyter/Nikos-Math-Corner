@@ -1,0 +1,19 @@
+\documentclass[tikz]{standalone}
+\usepackage{import}
+\usepackage{tkz-euclide}
+
+\begin{document}
+    \begin{tikzpicture}
+    \draw (-5,3) -- (5,3);
+    \draw (5,3) -- (5,-3);
+    \draw (5,-3) -- (-5,-3);
+    \draw (-5,-3) -- (-5,3);
+    
+    \filldraw[color=black] (-5,3) -- (-3,3) -- (-3,1.5) -- (-5,1.5) -- cycle;
+    \filldraw[color=black, fill=white, dashed] (-.5,-1.5) -- (1.5,-1.5) -- (1.5,-3) -- (-.5,-3) -- cycle;
+    \draw[-latex] (-4,2.25) -- (.5,-2.25);
+    \draw[-latex] (.5,-2.25) -- (2.5,-.25);
+    \node[white] at (-4,2.25) {DVD};
+    
+    \end{tikzpicture}
+\end{document}
