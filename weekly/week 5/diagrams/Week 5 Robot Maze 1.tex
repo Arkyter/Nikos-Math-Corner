@@ -1,0 +1,17 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+
+\begin{document} 
+    \begin{tikzpicture}
+        \begin{scope}[xshift = 3cm, local bounding box = M, block/.style = {minimum size = 1cm, fill = #1, anchor = south west, inner sep = 0pt, behind path}]
+            \draw (0, 1) node[block = black]{}
+                  (0, 2) node[block = black]{}
+                  (2, 1) node[block = black]{}
+                  (2, 0) node[block = black]{}
+                  (0, 0) node[block = green]{}
+                  (2, 2) node[block = red]{}
+                  (0, 0) grid (3,3); 
+        \end{scope}
+    \end{tikzpicture} 
+\end{document}
