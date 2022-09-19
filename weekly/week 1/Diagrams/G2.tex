@@ -1,0 +1,32 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz,tkz-euclide}
+
+\begin{document}
+    \begin{tikzpicture}[scale=2.3]
+      \draw[dotted] (0,0) circle (1);
+    
+      \foreach \point [count = \n, evaluate = \n as \rot using {{100,140,200,320}[\n - 1]}] in {A,B,C,D}{
+        \coordinate (\point) at (\rot:1);
+        %\fill (\point) circle (1pt);
+        \node[label={[label distance=-7pt]\rot:$\point$}] at (\point) {};
+      }
+    
+      \draw (A) -- (B) -- (C) -- (D) -- cycle;
+      \tkzMarkRightAngles[size=0.12](B,A,D D,C,B)
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=2.3]
+      \draw[dotted] (0,0) circle (1);
+    
+      \foreach \point [count = \n, evaluate = \n as \rot using {{120,190,240,20}[\n - 1]}] in {A,B,C,D}{
+        \coordinate (\point) at (\rot:1);
+        %\fill (\point) circle (1pt);
+        \node[label={[label distance=-7pt]\rot:$\point$}] at (\point) {};
+      }
+    
+      \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    
+      \tkzMarkAngle[mark=|,size=0.12cm](B,A,D)
+      \tkzMarkAngle[mark=||,size=0.12cm](D,C,B)
+    \end{tikzpicture}
+\end{document}
