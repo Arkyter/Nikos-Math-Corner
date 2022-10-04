@@ -1,0 +1,86 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#7}
+\date{Oct. 2, 2022}
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{Composition of rational functions} \newline
+    A rational function is a function described by a fraction between polynomials. For example, $1/x$, $(x^2+1)/x$, and $x/(10x+1)$ all count! We will study their composition, which is when you put a rational function inside another. A quick example: if $f(x) = 1/(x-1)$ and $g(x) = x/(2x+1)$, then their composition is:
+    \[ (g\circ f)(x) = g(f(x)) = \frac{f(x)}{2f(x)+1} = \frac{1/(x-1)}{2/(x-1) + 1} = \frac{1}{1+x}. \]
+    \begin{enumerate}
+        \item Verify that $f(x) = (x-1)/x$ has the property $(f \circ f \circ f)(x) = x$.
+        \item Find some examples of rational functions $f$ such that $(f \circ f)(x) = x$.
+        \item (\fullchili) We say a function has ``order $n$" if $n$ is the least positive integer such that
+        $$\overbrace{f(f(...f}^\text{$n$ times}(x)...) = x$$
+        for all $x$ that don't cause division by $0$ somewhere along the process. Show that there exists a rational function of order $n$ for all positive integers $n$.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Conway's look-and-say sequence!} \newline
+    Here is a funky sequence of numbers:
+    $$1, 11, 21, 1211, 111221, 312211, ...$$
+    What's the pattern? You look and say the number to get the next. For example, the first number has \emph{one $1$}, so we write $11$. Now this number has \emph{two $1$s}, so we write $21$. This one has \emph{one $2$, one $1$}, so we write $1211$, etc.\\
+    It was first analysed by John Conway (1937-2020 $\heartsuit$), who discovered many cool properties:
+    
+    \begin{enumerate}
+        \item Prove that no digit bigger than $3$ appears in the sequence.
+        \item Describe the first digit of the $n$-th entry in the sequence.
+        \item Find all three-digit strings that could ever appear inside a number in the sequence (for example, the three-digit string $211$ appears for the first time in $1\underline{211}$). 
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item \textbf{Grass Eating} \footnote{"animals grazing" would have been better. but nope, i had to go with the silly title.} \newline
+    Suppose we have a sheep, tied to a rope that is connected to the outside of a square pen with side length $5$ meters. If the length of the rope is $n$ meters and assuming that the sheep is extremely hungry (as in, it will immediately eat all the grass it can reach), how many square meters of grass is the sheep able to consume?
+    
+    \begin{enumerate}
+        \item Solve for $n = 5$.
+        \item (\halfchili) Solve for $n = 10$, then $n = 15$.
+    \end{enumerate}
+    
+    \item (\fullchili) \textbf{Trigonometry?} \newline
+    Let $P, Q, R$ denote the angles of an arbitrary triangle $PQR$. 
+    \begin{enumerate}
+        \item Show that \[ \tan P + \tan Q + \tan R = \tan P \tan Q \tan R. \]
+        \item Show that \[ \sin P + \sin Q + \sin R \leq \frac{3\sqrt{3}}{2}. \]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{An Assortment of Numbers}
+    \begin{enumerate}
+        \item Suppose Arky picks a set $S$ of $7$ consecutive numbers. Show that $S$ cannot be partitioned into $2$ subsets such that their products are equal.
+        
+        \item (\halfchili) Suppose $S$ is a set of $6$ consecutive numbers this time around! Show that it, once again, cannot be partitioned into $2$ subsets with equal product.
+        
+        \item (\fullchili) Show that if $S$ is a set of $p-1$ consecutive numbers such that $p \equiv 3 \pmod{4}$, it cannot be partitioned into $2$ subsets with equal product.
+    \end{enumerate}
+
+    \item \textbf{Quadratic Polynomial}
+    \begin{enumerate}
+        \item (\fullchili) Does there exist a quadratic polynomial $f$ such that all prime factors of $f(1), f(2), f(3), \dots \equiv 3 \bmod{4}$?
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
