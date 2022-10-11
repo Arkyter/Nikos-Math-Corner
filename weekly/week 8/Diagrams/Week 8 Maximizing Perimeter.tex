@@ -1,0 +1,23 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+
+\begin{document} 
+\begin{tikzpicture}[scale=1.5]
+  \tkzDefPoints{3.0/2.3/C, 0/0/A, 4/0/B}
+  \tkzDrawPolygon(A,B,C)
+  
+  \tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
+  \tkzDrawCircle(O,A)
+  
+  \tkzDefLine[mediator](A,B) \tkzGetPoints{I}{J}
+  \tkzInterLC(I,J)(O,A) \tkzGetPoints{C''}{C'}
+  
+  \tkzDrawPolygon[dashed](A,C',B)
+  
+     \foreach \point [count = \n, evaluate = \n as \rot using {{90,-120,-60,90}[\n - 1]}] in {C,A,B,C'}{
+    %\fill (\point) circle (1pt);
+    \node[label={[label distance=-5pt]\rot:$\point$}] at (\point) {};
+    }
+\end{tikzpicture}
+\end{document}
