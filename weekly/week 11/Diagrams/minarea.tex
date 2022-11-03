@@ -1,0 +1,34 @@
+\documentclass[tikz]{standalone}
+\usepackage{tkz-euclide}
+
+\pgfmathsetmacro\globalscale{1.3}
+
+\begin{document}
+\begin{tikzpicture}[scale=\globalscale]
+\tkzDefPoints{0/0/M,-0.5/-0.5/P1}
+\tkzDefRegPolygon[center,sides=4,name=P](M,P1)
+\tkzDrawPolygon(P1,P...,P4)
+
+% \i this, \n previous
+\foreach \i [count = \n, evaluate = \n as \weight using {{0.62445,0.534863,0.602578,0.256925,0.70672}[\n - 1]}] in {2,3,4,1}{
+\pgfmathsetmacro\weightcomplement{1-\weight}
+\tkzDefBarycentricPoint(P\n=\weight,P\i=\weightcomplement)
+\tkzGetPoint{Q\n}
+}
+\tkzDrawPolygon[thin, opacity=0.6,fill=blue!10,draw=blue!80](Q1,Q...,Q4)
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=\globalscale]
+\tkzDefPoints{0/0/M,0.552786/0/P1}
+\tkzDefRegPolygon[center,sides=5,name=P](M,P1)
+\tkzDrawPolygon(P1,P...,P5)
+
+% \i this, \n previous
+\foreach \i [count = \n, evaluate = \n as \weight using {{0.62445,0.534863,0.602578,0.256925,0.70672}[\n - 1]}] in {2,3,4,5,1}{
+\pgfmathsetmacro\weightcomplement{1-\weight}
+\tkzDefBarycentricPoint(P\n=\weight,P\i=\weightcomplement)
+\tkzGetPoint{Q\n}
+}
+\tkzDrawPolygon[thin, opacity=0.6,fill=blue!10,draw=blue!80](Q1,Q...,Q5)
+\end{tikzpicture}
+\end{document}
