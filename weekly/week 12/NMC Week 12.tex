@@ -1,0 +1,102 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+\usepackage{tkz-euclide}
+
+\begin{document}
+\title{NMC Problem Set \#12} % add # of pset
+\date{Nov. 6, 2022} % add date
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item (\fullchili) Let $a_1,a_2,a_3,...,a_{2022}$ and $b_1,b_2,b_3,...,b_{2022}$ be real numbers. Consider the following equation for an integer $n$:
+    \[ a_1|x-b_1| + a_2|x-b_2| + \cdots + a_{2022}|x-b_{2022}| = n \]
+    Suppose there are only finitely many values of $n$ for which the above equation has $2$ solutions. Show there are finitely many values of $n$ for which it only has $1$ solution.
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Another game show with doors (suck it, Monty Hall)} \footnote{Credit to the 2022 MAT exam for this... it was like, the only fun problem on the whole exam anyways.} \newline
+    Frog is participating in a game show! In front of him, there are $n$ doors with a unique prize behind each door. The show proceeds as such,
+    
+    \begin{enumerate}[label=\arabic*.]
+        \item Frog is allowed to open a total of $k$ doors.
+        
+        \item When Frog opens a door, the host makes a note of the prize that was just revealed. The host then closes the door and has the prize swapped with another prize in an adjacent door. For example, if there are $n = 3$ doors and the prize layout is originally $(1, 2, 3)$, then after opening the first door, our layout is now $(2, 1, 3)$. If the second door was opened instead, we might end up with a layout of $(2, 1, 3)$ or $(1, 3, 2)$.
+        
+        \item After opening $k$ doors, Frog takes home all the prizes he has won!
+    \end{enumerate}
+    
+    Naturally, it's in Frog's best interest to maximize his earnings (aka, open doors strategically so that he obtains as many things as possible!)
+    
+    \begin{enumerate}
+        \item Suppose we have $n = 13$ and $k = 7$. What's a strategy that Frog can follow to guarantee he wins $7$ unique prizes? Prove that if $n$ is of the form $2m + 1$, Frog can win $m + 1$ prizes in $k = m + 1$ moves.
+        
+        \item What about $n = 13$ and $k = 10$? Prove that if $n$ is of the form $3m + 1$, Frog can win $2m + 2$ prizes in $k = 2m + 2$ moves.
+        
+        \item (\halfchili) What about $n = 13$ and $k = 11$? Prove that if $n$ is of the form $4m + 1$, Frog can win $3m + 2$ prizes in $k = 3m + 2$ moves.
+        
+        \item (\fullchili) For which values of $n$ can Frog win every prize if he is allowed to keep on opening doors?
+    \end{enumerate}
+    
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item \textbf{Equidissection} \newline
+    In this problem, we explore the ways to "equidissect" a polygon. Suppose we want to slice a polygon $P$ into $N$ triangles of equal area. For example, if $P$ is a square and $N = 2$ or $4$, we have a valid equidissection for both below. \newline
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 11cm]{weekly/week 12/Diagrams/equisquare.tex}
+        \hspace{2em}
+        \label{fig:equisquare}
+    \end{figure}
+    
+    Furthermore, we define $S$ as the \textit{equidissection spectrum} of a polygon $P$. This is the set of all $N$ such that there exists an equidissection of $P$ into $N$ pieces.
+    
+    \begin{enumerate}
+        \item Prove that if $P$ has $n$ sides, then the equidissection spectrum cannot contain anything up to $n - 3$.
+    
+        \item Demonstrate that the equidissection spectrum of any triangle encompasses the integers, $\{1, 2, 3, 4, \dots \}$.
+        
+        \item Suppose we have a kite formed by the vertices $(-1, 0), (0, 1), (2, 0)$, and $(0, -1)$. Prove that, for any positive integer $k$, $2k$ and $3k$ are in $S$ for this kite. Remember that not all of the triangles have to be congruent; they just have to be of equal area.
+        
+        \item (\fullchili) Prove that for any positive integer $k$, $5k$ is in $S$ for this kite as well. Prove, for this particular shape, that if $m$, $n$ are in the spectrum, then so is $m + n$.
+        
+        \item (\fullchili \hspace{1pt} $\times$ 2) \footnote{thanks \href{https://mathoverflow.net/questions/133777/is-the-equidissection-spectrum-closed-under-addition}{to math overflow}. such a neat problem} Suppose that for some $N$, an equidissection of any polygon $P$ into $N$ triangles has all triangles sharing a common vertex. Call such a dissection \textit{star-like}. Prove that if we can form $m, n$ star-like equidissections, then $m+n \in S$.
+        
+        \item (\fullchili \hspace{1pt} $\times$ Open) Is the equidissection spectrum closed under addition? That is, for any $m, n \in S$, we have $m + n \in S$. 
+    \end{enumerate}
+    
+    
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Additive sets}\\
+    Consider the following sequence of numbers:
+    \[ 6, 10, 12, \mathbf{16, 18, 20, 22, 24, 26, 28, ...} \]
+    It includes $6$, $10$, and all the numbers you can make by summing these two together multiple times. You can see that for the first few numbers the sequence skips around a bit, but eventually \textbf{it contains all and only the even number, \emph{past a certain point}}. In fact, a more general statement holds.
+    
+    \begin{enumerate}
+        \item Suppose $S$ is a sequence of positive integers, and that for any two numbers $a, b$ in the sequence, their sum $a+b$ is also part of the sequence. Show that then $S$, \emph{past a certain point}, looks like multiples of just one number.
+        
+        \item Show that the above statement is not true if $S$ is allowed to contain not just integers, but any positive rational numbers.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
