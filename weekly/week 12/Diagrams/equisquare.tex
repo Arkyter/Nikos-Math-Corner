@@ -1,0 +1,31 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+\usepackage{{style_files/evan}}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
+
+\begin{document} 
+    \begin{tikzpicture}
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (5, 0);
+        \coordinate (C) at (5, 5);
+        \coordinate (D) at (0, 5);
+        
+        \draw[fill=white!40, fill opacity = 0.7] (A) -- (B) -- (C) -- (D) -- (A);
+        \draw[dashed] (A) -- (C);
+        
+        \coordinate (A2) at (7, 0);
+        \coordinate (B2) at (12, 0);
+        \coordinate (C2) at (12, 5);
+        \coordinate (D2) at (7, 5);
+        
+        \tkzDefMidPoint(C2,D2) \tkzGetPoint{M2}
+        \tkzDefMidPoint(A2,M2) \tkzGetPoint{N2}
+        
+        \draw[fill=white!40, fill opacity = 0.7] (A2) -- (B2) -- (C2) -- (D2) -- (A2);
+        \draw[dashed] (A2) -- (M2) -- (B2) -- (N2);
+    \end{tikzpicture}
+\end{document}
