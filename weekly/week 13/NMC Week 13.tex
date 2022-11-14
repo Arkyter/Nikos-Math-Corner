@@ -1,0 +1,110 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+\usetikzlibrary{backgrounds}
+
+\begin{document}
+\title{NMC Problem Set \#13} % add # of pset
+\date{Nov. 13, 2022} % add date
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{A Mysterious Function} \newline
+    Let $f$ be a real-valued function on the plane such that, for every square $ABCD$ in the plane, $f(A) + f(B) + f(C) + f(D) = 0$. Does it follow that $f(P) = 0$ for all points $P$ in the plane?
+    
+    \item \textbf{A Careful Selection} \newline
+    Suppose we have $\{a_1, a_2, a_3, \dots, a_{10}, b_1, b_2, b_3, \dots, b_{10}\}$ as a permutation of $\{1, 2, 3, \dots, 20\}$. Maximize
+    \[ a_1b_1 + a_2b_2 + a_3b_3 + \dots + a_{10}b_{10}. \]
+    
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Graph theory} \newline
+    A graph is a set of ``nodes" (which could be anything, though they're usually represented by circles), and where two nodes might be connected through an ``edge". Below is a visual example of a graph:
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 8cm]{weekly/week 13/Diagrams/graph1.tex}
+        \hspace{2em}
+        \label{fig:graph1}
+    \end{figure}
+    The simplest definition of graph (the one we use here) assumes that there is at most one edge between two nodes. Other definitions might allow multiple edges between two nodes, or even ``loops" (edges from a node to itself).
+    
+    \begin{enumerate}
+        \item How many graphs are there with $100$ nodes?
+        \item A \textbf{walk} on a graph is a sequence of consecutive edges. One can imagine walking from one node to the next through edges. A graph is said to be connected if for any two nodes there's a walk from one to the other.\\
+        Suppose a graph has $n$ vertices, how many edges must it have \emph{at least} for it to be connected?
+        \item How many edges may a graph with $n$ nodes have \emph{at most} for it \emph{not} to be connected?
+        \item A walk is said to be an \textbf{Eulerian path} if every edge of the graph appears \emph{exactly} once. Come up with a connected graph that doesn't have an Eulerian path.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item \textbf{Regular Shapes on the Integer Lattice} \newline
+    Suppose we have a regular polygon $P$ on $\RR^2$.
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 6cm]{weekly/week 13/Diagrams/squareonlattice.tex}
+        \hspace{2em}
+        \label{fig:squareonlylattice}
+    \end{figure}
+    
+    \begin{enumerate}
+        \item Suppose $P$ is an equilateral triangle. Is it possible for all of the vertices of $P$ to be in $\ZZ^2$?
+        
+        \item (\fullchili) A consequence of Niven's Theorem states that for integers $n$, $\cot(\frac{\pi}{n})$ is rational if and only if $n = 2$ or $4$. Prove that if a regular polygon $P$ has integer coordinates then it must be a square.
+        
+        \item (\halfchili) Prove that a regular pentagon cannot be embedded in $\ZZ^2, \ZZ^3, \ZZ^4, \dots$. As a generalization, prove that this also holds for all non-triangular, square, or hexagonal $P$.
+        
+        \item (\fullchili) For which regular polyhedrons in $\RR^3$ is it possible to have all of their vertices be in $\ZZ^3$?
+    \end{enumerate}
+    
+    \item (\fullchili \hspace{1pt} $\times$ 2) \textbf{Splatoon (why)}\footnote{idk what to name this but i sure would love to play splatoon on a polyhedron}
+    
+    \begin{enumerate}
+        \item Let $P$ be a convex polyhedron. Suppose that we paint each face either red or blue, such that no two touching faces share the same color. Suppose that in terms of surface area, there is more blue than red. Prove that we cannot inscribe a sphere in $P$ (as in, such that the sphere is tangent to every face).
+            \begin{enumerate}
+                \item (\halfchili) It may be easier to first consider this problem in the 2D case.
+            \end{enumerate}
+        
+        \item Suppose this time, we only want to make it so no two \textit{blue faces} can share an edge, and this limitation is not applied to red. If we can color $P$ such that there are more blue faces than red faces, show that we also cannot inscribe a sphere in $P$.
+    \end{enumerate}
+    
+    
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Wolstenholme's Theorem} \newline
+    Suppose we let $s$ be the numerator of the fraction
+    \[ H(p-1) = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{p-1} \]
+    in lowest terms.
+    
+    \begin{enumerate}
+        \item Let $p$ be a prime greater than $5$. Prove that $s$ is divisible by $p^2$.
+    
+        \item From this result, prove that
+        \[ \binom{2p}{p} \equiv 2 \pmod{p^3}. \]
+        
+        \item (\fullchili \hspace{1pt} $\times$ Open) Is $s/p^2$ necessarily a squarefree number?
+    \end{enumerate}
+    
+\end{enumerate}
+\end{document}
