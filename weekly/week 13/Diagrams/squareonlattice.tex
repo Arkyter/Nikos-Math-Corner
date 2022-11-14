@@ -1,0 +1,66 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+\usepackage{{style_files/evan}}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
+
+\begin{document} 
+    \begin{tikzpicture}
+        \coordinate (A1) at (0, 0);
+        \coordinate (A2) at (3, 0);
+        \coordinate (A3) at (6, 0);
+        \coordinate (A4) at (9, 0);
+        \coordinate (A5) at (12, 0);
+        \coordinate (B1) at (0, 3);
+        \coordinate (B2) at (3, 3);
+        \coordinate (B3) at (6, 3);
+        \coordinate (B4) at (9, 3);
+        \coordinate (B5) at (12, 3);
+        \coordinate (C1) at (0, 6);
+        \coordinate (C2) at (3, 6);
+        \coordinate (C3) at (6, 6);
+        \coordinate (C4) at (9, 6);
+        \coordinate (C5) at (12, 6);
+        \coordinate (D1) at (0, 9);
+        \coordinate (D2) at (3, 9);
+        \coordinate (D3) at (6, 9);
+        \coordinate (D4) at (9, 9);
+        \coordinate (D5) at (12, 9);
+        \coordinate (E1) at (0, 12);
+        \coordinate (E2) at (3, 12);
+        \coordinate (E3) at (6, 12);
+        \coordinate (E4) at (9, 12);
+        \coordinate (E5) at (12, 12);
+        
+        \node[black] at (A1) {\textbullet};
+        \node[black] at (A2) {\textbullet};
+        \node[black] at (A3) {\textbullet};
+        \node[black] at (A4) {\textbullet};
+        \node[black] at (A5) {\textbullet};
+        \node[black] at (B1) {\textbullet};
+        \node[black] at (B2) {\textbullet};
+        \node[black] at (B3) {\textbullet};
+        \node[black] at (B4) {\textbullet};
+        \node[black] at (B5) {\textbullet};
+        \node[black] at (C1) {\textbullet};
+        \node[black] at (C2) {\textbullet};
+        \node[black] at (C3) {\textbullet};
+        \node[black] at (C4) {\textbullet};
+        \node[black] at (C5) {\textbullet};
+        \node[black] at (D1) {\textbullet};
+        \node[black] at (D2) {\textbullet};
+        \node[black] at (D3) {\textbullet};
+        \node[black] at (D4) {\textbullet};
+        \node[black] at (D5) {\textbullet};
+        \node[black] at (E1) {\textbullet};
+        \node[black] at (E2) {\textbullet};
+        \node[black] at (E3) {\textbullet};
+        \node[black] at (E4) {\textbullet};
+        \node[black] at (E5) {\textbullet};
+        
+        \draw (A4) -- (D5) -- (E2) -- (B1) -- (A4);
+    \end{tikzpicture}
+\end{document}
