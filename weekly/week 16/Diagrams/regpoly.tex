@@ -1,0 +1,21 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+\usepackage{{style_files/evan}}
+
+\usetikzlibrary{shapes.geometric}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
+
+\begin{document}
+    \begin{tikzpicture}
+        \draw[airforceblue, dashed] (0, 0) circle(6cm);
+        \node[regular polygon, regular polygon sides=11, minimum size=12cm, draw] at (0,0) (A) {};
+        \foreach \i in {1,...,11} {
+            \draw[black] (A.corner 6) -- (A.corner \i);
+            \node[crimson] at (A.corner \i) {\textbullet};
+        }
+    \end{tikzpicture}
+\end{document}
