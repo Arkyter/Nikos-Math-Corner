@@ -1,0 +1,73 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#17} % add # of pset
+\date{Dec. 11, 2022} % add date
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item (\fullchili) \textbf{Recurrence} \newline
+    Let $P$ be a polynomial of degree $n > 1$ with integer coefficients. Consider
+    \[ Q(x) = \underbrace{P(P(\dots(P(P}_{>1 \text{ times}}(x))\dots)), \]
+    Prove that there are at most $n$ integers $k$ such that $Q(k) = k$.
+
+    \item (\fullchili \hspace{1pt} $\times$ 3, MPK) \textbf{Please Send Me Back to Square One} \newline
+    Let $I$ be an interval and let $f$ be a function such that $f : I \to I$ is continuous.
+    \begin{enumerate}
+        \item Suppose that $f(f(f(z))) = z$ for some real $z$ in $I$, but $f(f(z)) \neq z$ and $f(z) \neq z$. Prove that for all naturals $n$, there exists $x \in I$ such that $f^n(x) = x$ but $f^k(x) \neq x$ for all $k < n$.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Irregular Chessboard} \newline
+    Suppose we have a chessboard of size $m \times n$ with even $m, n$, completely horizontally tiled by dominoes. For which selections of $m, n$ does it force the amount of dominoes covering a white tile on its left side to be equal to the amount of dominoes covering a white tile on its right side?
+
+    \item (\fullchili \hspace{1pt} $\times$ 3) \textbf{Dumb Identity} \newline
+    Verify the following combinatorial identity either algebraically or through a combinatorial argument\footnote{i ramanujaned this thing up randomly idk turns out the solution is nasty as hell though so proceed with caution}:
+    \[ \binom{2m}{2n} = \sum_{k=0}^{n} \binom{2n+1}{2k+1} \binom{m+k}{2n}. \]
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item (\halfchili) \textbf{Generalized Fermat Point} \newline
+    Suppose we have any given triangle $\Delta ABC$. Then let $D, E, F$ be drawn such that $\angle{EAC} = \angle{FAB}$, $\angle{FBA} = \angle{DBC}$, and $\angle{DCB} = \angle{ECA}$. Then $\overline{AD}, \overline{BE}$, and $\overline{CF}$ are concurrent.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=12.8cm]{Diagrams/GFP1.tex} % 15cm = aligned?
+        \caption{This is a funny caption. You should laugh now.}
+        \label{fig:GFP1}
+    \end{figure}
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Another Euler Thing}
+    \begin{enumerate}
+        \item Let $p$ be a prime of the form $4k + 3$. Show that the congruence $x^2 \equiv -1 \pmod{p}$ has no solutions.
+
+        \item Let $p$ be a prime of the form $4k + 1$, and let $n = (p - 1)/2$. Show that $(n!)^2 \equiv -1 \pmod{p}$.
+    \end{enumerate}
+    
+    \item (\fullchili) \textbf{Neat Congruence} \newline
+    Let $f$ be a monic polynomial with integer coefficients and complex roots $z_1, z_2, \dots, z_n$. Prove that for any prime $p$, we have \[ z_1^p + z_2^p + \dots + z_n^p \equiv (z_1 + z_2 + \dots + z_n)^p \mod{p} \]
+\end{enumerate}
+
+\end{document}
