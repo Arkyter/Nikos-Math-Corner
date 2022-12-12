@@ -1,0 +1,51 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+\usepackage{{style_files/evan}}
+
+\begin{document}
+    \begin{tikzpicture}
+        \coordinate (A) at (4.30337, -0.29941);
+        \coordinate (B) at (12.79028, -0.6359);
+        \coordinate (C) at (8.0234, 4.52355);
+        \coordinate (D) at (10.88935, 3.96621);
+        \coordinate (E) at (1.48063, 2.63549);
+        \coordinate (F) at (4.62848, -3.29119);
+        \coordinate (P) at (9.4185, 3.01356);
+        \coordinate (Q) at (5.63928, 1.43258);
+        \coordinate (R) at (5.90067, -0.36274);
+        
+        \coordinate (O) at (6.56436, 1.16499);
+        
+        \draw[black] (A) -- (B) -- (C) -- (A);
+        
+        \draw[airforceblue] (A) -- (D);
+        \draw[airforceblue] (B) -- (E);
+        \draw[airforceblue] (C) -- (F);
+        
+        \draw[gray] (A) -- (E) -- (C) -- (D) -- (B) -- (F) -- (A);
+        
+        \node[black] at (A) {\textbullet};
+        \node[black] at (B) {\textbullet};
+        \node[black] at (C) {\textbullet};
+        \node[airforceblue] at (D) {\textbullet};
+        \node[airforceblue] at (E) {\textbullet};
+        \node[airforceblue] at (F) {\textbullet};
+        \node[amethyst] at (O) {\textbullet};
+        \node[crimson] at (P) {\textbullet};
+        \node[crimson] at (Q) {\textbullet};
+        \node[crimson] at (R) {\textbullet};
+        
+        \draw (A) node[label={[label distance=0cm] 225 : $A$}]{}
+              (B) node[label={[label distance=0cm] 45 : $B$}]{}
+              (C) node[label={[label distance=0cm] 90 : $C$}]{}
+              (D) node[label={[label distance=0cm] 45 : $D$}]{}
+              (E) node[label={[label distance=0cm] 135 : $E$}]{}
+              (F) node[label={[label distance=0cm] 225 : $F$}]{}
+              (O) node[label={[label distance=0cm] 280 : $O$}]{}
+              (P) node[label={[label distance=0cm] 270 : $P$}]{}
+              (Q) node[label={[label distance=0cm] 120 : $Q$}]{}
+              (R) node[label={[label distance=0cm] 315 : $R$}]{};
+              
+    \end{tikzpicture}
+\end{document}
