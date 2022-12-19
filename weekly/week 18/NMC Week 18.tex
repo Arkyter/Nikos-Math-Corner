@@ -1,0 +1,63 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#18} % add # of pset
+\date{Dec. 18, 2022} % add date
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{I Don't Like Fair Games} \newline
+    Suppose we have $2$ biased dice. Show that it is impossible for the distribution of their sum to be uniformly distributed.
+
+    \item (\halfchili) \textbf{Spread the Negativity} \footnote{putnam problems are lowkey super fun} \newline
+    Over all real polynomials $p(x)$ with degree $n > 2$, express the largest possible number of negative coefficients of $p(x)^2$ in terms of $n$.
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Stacked Probability}\footnote{Miklos Schweitzer 1968 P11} \newline
+    Let $A_1, A_2, A_3, \dots, A_n$ be arbitrary events in a probability field. Denote $C_k$ as the event that at least $k \leq n$ of $A_1, A_2, A_3, \dots, A_n$ occur. Prove that
+    \[ \prod_{k=1}^n P(C_k) \leq  \prod_{k=1}^n P(A_k). \]
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item (\halfchili) \textbf{Trippy} \footnote{egmo ex1.1} \newline
+    Quadrilateral $WXYZ$ has perpendicular diagonals. Given that $\angle WZX = 30^\circ$, $\angle XWY = 40^\circ$, and $\angle WYZ = 50^\circ$, compute the angles $\angle YXZ$ and $\angle XYW$.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=8.9cm]{Diagrams/funkywxyz.tex} % 15cm = aligned?
+        \caption{Why is it that every time we talk geometry it feels like we're screaming? Like, let's start adopting lowercase letters instead of capitals when naming vertices.}
+        \label{fig:funkywxyz}
+    \end{figure}
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Prime Generators Exist?!} \footnote{m.tip phaovibul} \newline
+    Let $p_n$ be the $n$th prime. Show that
+    \[ p_n = 1 + \sum_{m=1}^{2^n}{\floor{\floor{\frac{n}{1 + \sum^{m}_{j=2}{\floor{\frac{(j-1)! + 1}{j}} - \floor{\frac{(j-1)!}{j}}}}}^{1/n}}}. \]
+    Yes. This is horribly inefficient. Perhaps we can rely on IBM to one day discover the 100th prime.
+
+    \item (\halfchili) \textbf{Menon's Identity} \newline
+    Prove the following:
+    \[ \sum_{\substack{1 \leq k \leq n \\ \gcd(k, n) = 1}} \gcd(k-1, n) = \sum_{d \mid n} \varphi(n) = \varphi(n) \tau(n), \]
+    where $\varphi(n)$ is the Euler totient, representing the number of numbers from $1$ to $n$ relatively prime to $n$, and $\tau(n)$ is the divisor function, representing the number of factors of $n$. 
+\end{enumerate}
+
+\end{document}
