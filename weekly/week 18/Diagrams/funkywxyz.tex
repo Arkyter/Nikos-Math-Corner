@@ -1,0 +1,30 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+\usepackage{{style_files/evan}}
+
+\begin{document}
+    \begin{tikzpicture}
+        \coordinate (W) at (-2.76, -0.25);
+        \coordinate (X) at (1.58, 0.25);
+        \coordinate (Y) at (4.12, -4.79);
+        \coordinate (Z) at (-3.16, -6.95);
+        \coordinate (center) at (0.04, -2.11);
+
+        \draw (W) -- (X) -- (Y) -- (Z) -- (W);
+        \draw (W) -- (Y);
+        \draw (X) -- (Z);
+        
+        \node[black] at (W) {\textbullet};
+        \node[black] at (X) {\textbullet};
+        \node[black] at (Y) {\textbullet};
+        \node[black] at (Z) {\textbullet};
+        \node[black] at (center) {\textbullet};
+        
+        \draw (W) node[label={[label distance=0cm] 135 : $W$}]{}
+              (X) node[label={[label distance=0cm] 45 : $X$}]{}
+              (Y) node[label={[label distance=0cm] 0 : $Y$}]{}
+              (Z) node[label={[label distance=0cm] 225 : $Z$}]{}
+              (center) node[label={[label distance=0cm] 270 : $O$}]{};
+    \end{tikzpicture}
+\end{document}
