@@ -1,0 +1,77 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#24} % add # of pset
+\date{Feb. 5, 2023} % add date
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{Fibonacci Obsession}\footnote{i kinda am obsessed ngl... are genfuns algebra? i think so.} \newline
+    Prove that the infinite sum,
+    \[ \sum_{n = 1}^{\infty} \frac{F_n}{10^n} = 0.1 + 0.01 + 0.002 + 0.0003 + 0.00005 + \dots, \]
+    is rational.
+
+    \begin{enumerate}
+        \item Suppose further that we create a new infinite sum with some positive integer $z$,
+        \[ \sum_{n \geq 1} \frac{F_n}{z^n} = \frac{F_1}{z} + \frac{F_2}{z^2} + \frac{F_3}{z^3} + \frac{F_4}{z^4} + \frac{F_5}{z^5} + \dots.\]
+        Prove that this sum is also rational.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Eulerian Numbers} \newline
+    The Eulerian Numbers, $A(n, m)$ or $\genfrac<>{0pt}{}{n}{m}$, are defined as the number of permutations of the numbers $1$ to $n$ with exactly $m$ elements being greater than the previous element (permutations with $m$ "ascents").
+
+    \begin{enumerate}
+        \item From the recurrence
+        \[ \genfrac<>{0pt}{}{n}{k} = (k + 1)\genfrac<>{0pt}{}{n-1}{k} + (n - k)\genfrac<>{0pt}{}{n-1}{k-1}, \]
+        prove Worpitzky's identity,
+        \[ x^n = \sum_{k} \genfrac<>{0pt}{}{n}{k} \binom{x+k}{n}, \]
+        for integers $n \geq 0$.
+
+        \item (\fullchili)\footnote{concrete mathematics 6.65. cool stuff} Furthermore, for a function $f : \RR \to \CC$ integrable over $(0, n)$, explain
+        \[ \int_0^1 \dots \int_0^1 f(\floor{x_1 + x_2 + \dots + x_n}) \, dx_1 \dots dx_n = \sum_{k} \genfrac<>{0pt}{}{n}{k} \frac{f(k)}{n!} \]
+        with a combinatorial argument.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item \textbf{"Arbitrary" Square Root} \newline
+    Given a segment $AB$ of arbitrary length and the ability to construct any arbitrary segment of unit length, perform a straightedge and compass construction of a line with length $\sqrt{AB}$.
+    
+    \begin{enumerate}
+        \item Is $\cbrt{AB}$ constructible? What about with origami?
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Carefully Collecting Squares} \newline
+    Suppose the positive integers $x, y$ satisfy $2x^2 + x = 3y^2 + y$. Show that $x - y, 2x + 2y + 1, 3x + 3y + 1$ are all perfect squares.
+
+    \item (\halfchili) \textbf{Imaginary Product turned Real}\footnote{lucid dream} \newline
+    Is the product,
+    \[ \prod_{k=1}^{\infty} (k^2 + i), \]
+    ever real?
+    
+\end{enumerate}
+
+\end{document}
