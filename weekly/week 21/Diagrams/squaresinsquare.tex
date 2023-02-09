@@ -1,0 +1,50 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+\usepackage{{style_files/evan}}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+
+\begin{document}
+    \begin{tikzpicture}
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (6, 0);
+        \coordinate (C) at (6, 6);
+        \coordinate (D) at (0, 6);
+        
+        \coordinate (K) at (2, 6);
+        \coordinate (P) at (1, 3);
+        \coordinate (Q) at (5, 5);
+        \coordinate (R) at (4, 2);
+        \coordinate (S) at (3, -1);
+
+        \draw (A) -- (B) -- (C) -- (D) -- (A);
+        \draw (A) -- (K) -- (Q) -- (S) -- (A);
+        \draw (P) -- (R);
+        \draw[amber] (B) -- (R);
+        
+        \node[black] at (A) {\textbullet};
+        \node[black] at (B) {\textbullet};
+        \node[black] at (C) {\textbullet};
+        \node[black] at (D) {\textbullet};
+        \node[black] at (K) {\textbullet};
+        \node[black] at (P) {\textbullet};
+        \node[black] at (Q) {\textbullet};
+        \node[black] at (R) {\textbullet};
+        \node[black] at (S) {\textbullet};
+        
+        \draw (A) node[label={[label distance=0cm] 225 : $A$}]{}
+              (B) node[label={[label distance=0cm] 315 : $B$}]{}
+              (C) node[label={[label distance=0cm] 45 : $C$}]{}
+              (D) node[label={[label distance=0cm] 135 : $D$}]{}
+              (K) node[label={[label distance=0cm] 90 : $K$}]{}
+              (P) node[label={[label distance=0cm] 135 : $P$}]{}
+              (Q) node[label={[label distance=0cm] 0 : $Q$}]{}
+              (R) node[label={[label distance=0cm] 45 : $R$}]{}
+              (S) node[label={[label distance=0cm] 270 : $S$}]{};
+              
+    \end{tikzpicture}
+\end{document}
