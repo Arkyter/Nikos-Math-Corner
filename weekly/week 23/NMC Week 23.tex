@@ -1,0 +1,68 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#23} % add # of pset
+\date{Jan. 29, 2023} % add date
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{Logs Make for Terrible Floor Designs} \newline
+    Determine a necessary and sufficient condition on $b \in \RR > 1$ such that
+    \[ \floor{\log_b{x}} = \floor{\log_b{\floor{x}}} \]
+    for all reals $x > 1$.
+
+    \item (\fullchili) \textbf{Assortment} \newline
+    Suppose we have reals $\alpha, \beta$ where $0 \leq \alpha < 1$ and $\beta \geq 0$. Given the multiset
+    \[ \{ \floor{n\alpha} + \floor{n\beta} \mid n > 0 \}, \]
+    when are we able to determine the original values of $\alpha$ and $\beta$?
+    
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item \textbf{Extraordinarily Ordinary}\footnote{aka, how to insult people. problem taken from an intro to combi textbook that i really liked, the one by richard a. brualdi. FIBONACCI JUMPSCARE.} \newline
+    Let $S$ be a subset of the integers. We call $S$ \textit{extraordinary} if
+    \[ \mathrm{min}\{x \mid x \in S\} = |S|. \]
+    If $g_n$ is the number of extraordinary subsets of $\{1, 2, 3, \dots, n\}$, prove that
+    \[ g_n = g_{n-1} + g_{n-2} \]
+    for $n \geq 3$.
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item \textbf{Equality Out of Nowhere} \newline
+    If $A, B, C$ are the centers and $a, b, c$ are the radii of three coaxal circles, prove that
+    \[ a^2BC + b^2CA + c^2AB = BC \cdot CA \cdot AB. \]
+
+    
+
+    
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Modulo Chain} \newline
+    Prove the following for integers $x, y, n$,
+    \[ (x \hspace{3pt}\mathrm{mod}\hspace{3pt} ny) \hspace{3pt}\mathrm{mod}\hspace{3pt} y = x \hspace{3pt}\mathrm{mod}\hspace{3pt} y. \]
+
+    \item \textbf{Chameleons in a Tree} \newline
+    There are $r$ red, $y$ yellow, and $b$ blue chameleons in a tree\footnote{damn, i wanted to say chameleons in a group before i realized abstract alg mfs would get triggered}. When two chameleons of the same color meet, their color stays the same; but if two chameleons of different colors meet, they change to the third color. For which starting values of $r, y, b$ will it be possible for all chameleons to be the same color?
+    
+\end{enumerate}
+
+\end{document}
