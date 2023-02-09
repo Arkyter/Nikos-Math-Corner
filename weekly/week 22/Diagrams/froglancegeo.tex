@@ -1,0 +1,40 @@
+\documentclass[preview]{standalone}
+\usepackage{import}
+\usepackage{tikz, tkz-euclide}
+\usepackage{{style_files/evan}}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+
+\begin{document}
+    \begin{tikzpicture}
+      \tkzDefPoints{0/0/B, 7.2/0/A, 1.6/6.5/C}
+    
+      \tkzDrawPolygon[fill=black!5](A,B,C)
+    
+      \tkzDefTriangleCenter[ortho](A,B,C) \tkzGetPoint{H}
+      \tkzDefSpcTriangle[ortho](A,B,C){P,Q,D}
+      \tkzDefMidPoint(A,B) \tkzGetPoint{M}
+    
+      \tkzInterLL(P,Q)(A,B) \tkzGetPoint{T}
+      
+      \tkzDrawSegments(Q,T B,T A,P B,Q C,M)
+      \tkzDrawLine[add=0 and 0.6](T,H)
+      
+      \tkzMarkRightAngles(A,P,B A,Q,B)
+      
+      \tkzInterLL(C,M)(T,H) \tkzGetPoint{E}
+      \tkzMarkRightAngle[densely dotted](H,E,M)
+    
+    
+      \foreach \point [count = \n, evaluate = \n as \rot using {{-135,90,180,0,-90,-90,90}[\n - 1]}] in {B,C,P,Q,T,M,H}{
+        %\fill (\point) circle (1pt);
+        \node[label={[label distance=-3pt]\rot:\Large$\point$}] at (\point) {};
+      }
+      \node[label={[label distance=-7pt]-45:\Large$A$}] at (A) {};
+    
+    
+    \end{tikzpicture}
+\end{document}
