@@ -1,0 +1,77 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{{style_files/evan}}
+
+\usepackage{{style_files/NMC}}
+\usepackage{standalone}
+\usepackage{import}
+
+\begin{document}
+\title{NMC Problem Set \#21} % add # of pset
+\date{Jan. 8, 2023} % add date
+\maketitle
+
+\section*{Welcome!}
+
+This is a selection of interesting problems derived from curious thoughts, curated so you can nibble on them throughout the week! The point of this document is to introduce you to fun puzzles that require thinking. We recommend you try the ones that you find interesting! Feel free to work on them with others (even us teachers!). Harder problems are marked with chilies (\fullchili), in case you want to challenge yourself.
+\newline\newline
+Have fun! \textit{Note: New variants on these problems may be released throughout the week. Remember to check back once in a while!}
+    
+\section{Algebra}
+\begin{enumerate}[label=\textbf{A\arabic*}.]
+    \item \textbf{Incorrect Deduction} \newline
+    What is wrong with the following?
+    \[ \left(\sum_{j=1}^{n} a_j\right) \left(\sum_{k=1}^{n} \frac{1}{a_k} \right) = \sum_{j=1}^{n} \sum_{k=1}^{n} \frac{a_j}{a_k} = \sum_{k=1}^{n} \sum_{k=1}^{n} \frac{a_k}{a_k} = \sum_{k=1}^{n} n = n^2. \]
+
+    \item \textbf{Goldbach's "Other Thing"} \newline
+    Let $P$ be the set of perfect powers, defined recursively as $\{ m^n \mid m, n \geq 2, m \not \in P \}$. Prove that
+    \[ \sum_{k \in P} \frac{1}{k-1} = \frac{1}{3} + \frac{1}{7} + \frac{1}{8} + \frac{1}{15} + \frac{1}{24} + \dots = 1. \]
+    
+\end{enumerate}
+
+\newpage
+\section{Combinatorics}
+\begin{enumerate}[label=\textbf{C\arabic*}.]
+    \item (\fullchili) \textbf{Friend Meetup} \newline
+    Alice and Bob are planning to meet each other in an $n$-by-$n$ grid. Alice starts at the top-left, and Bob starts at the bottom right. If, every minute, Alice randomly chooses either the square below or to the right of her to walk to and Bob randomly chooses either the square above or to the left of him to walk to, what is the chance that Alice and Bob will end up on the same square after some period of time?
+\end{enumerate}
+
+\newpage
+\section{Geometry}
+\begin{enumerate}[label=\textbf{G\arabic*}.]
+    \item (\fullchili \hspace{1pt} $\times$ Open) \textbf{Rectangular Absurdity} \newline
+    Given that we know
+    \[ \sum_{k = 1}^{\infty} \frac{1}{k(k+1)} = 1, \]
+    we can say that the sum of the areas of all $1/k$ by $1/(k+1)$ rectangles, for $k \geq 1$, have the same area as a $1$-by-$1$ square. However, can we arrange these rectangles so that they fit simultaneously in the square?
+
+    \item \textbf{Squares in a Square} \newline
+    In the following diagram, $ABCD$ is a square and $K$ is located on $CD$. Let $P$ be located on the midpoint of $AK$, then draw two squares $APRS$ and $PKQR$ to the right. What is the measure of the angle $ABR$?
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 8cm]{Diagrams/squaresinsquare.tex} % 15cm = aligned?
+        \label{fig:squaresinsquare}
+    \end{figure} 
+\end{enumerate}
+
+\newpage
+\section{Number Theory}
+\begin{enumerate}[label=\textbf{N\arabic*}.]
+    \item \textbf{Fibonacci had a Stroke} \newline
+    Define the sequence $(F_n)$ with the recursive relation $F_{n+1} = F_{n}^{-1} + F_{n-1}^{-1}$ as an \textit{inverse Fibonacci sequence}. Given that $F_0, F_1 \neq 0$, prove that $(F_n)$ converges to $\pm \sqrt{2}$.
+
+    \item \textbf{Bezout Sum} \newline
+    Let $x_1, x_2, \dots, x_n \in \ZZ$ and $d = \gcd(x_1, x_2, \dots, x_n)$. Define any sum of the form
+    \[ \sum_{i = 1}^{n} x_i y_i = d \]
+    with $y_1, y_2, \dots, y_n \in \ZZ$ as a \textit{Bezout Sum}.
+
+    \begin{enumerate}
+        \item (Bezout's Identity) Suppose $n = 2$. Prove that there exists $y_1, y_2$ that satisfies the Bezout Sum,     
+        \[ x_1y_1 + x_2y_2 = d. \]
+
+        \item (\halfchili) Prove the above for a general choice of $n \geq 2$.
+
+        \item (\fullchili) Prove that for all $n$, there exists a set of $n$ integers $x_1, x_2, \dots x_n$ such that for every possible Bezout Sum with $\sum_i x_i y_i = d$, all of $y_1, y_2, \dots, y_n$ are nonzero.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}
